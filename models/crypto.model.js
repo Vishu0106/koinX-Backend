@@ -13,7 +13,7 @@ const cryptoSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
-    DayChange:{
+    dayChange:{
         type: Number,
         required: true,
     }
