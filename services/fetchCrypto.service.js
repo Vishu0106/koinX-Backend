@@ -5,7 +5,7 @@ async function fetchCryptoData(coins = ['bitcoin', 'matic-network', 'ethereum'])
   const url = 'https://api.coingecko.com/api/v3/simple/price';
   
   try {
-    // Make the API request
+    // Make the API request without an API key
     const response = await axios.get(url, {
       params: {
         vs_currencies: 'usd',
@@ -13,11 +13,9 @@ async function fetchCryptoData(coins = ['bitcoin', 'matic-network', 'ethereum'])
         include_market_cap: true,
         include_24hr_change: true,
         precision: 0,
-        'x-cg-demo-api-key': process.env.API_KEY,
       },
       headers: {
         accept: 'application/json',
-        'x-cg-demo-api-key': process.env.API_KEY,  // API key in the header
       },
     });
 
@@ -39,4 +37,3 @@ async function fetchCryptoData(coins = ['bitcoin', 'matic-network', 'ethereum'])
 }
 
 export { fetchCryptoData };
-
