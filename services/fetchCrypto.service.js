@@ -11,11 +11,11 @@ async function fetchCryptoData(coins = ['bitcoin', 'matic-network', 'ethereum'])
       params: {
         vs_currency: 'usd',
         ids: coins.join(','),
-        x_cg_demo_api_key:process.env.API_KEY
+        x_cg_demo_api_key:"CG-MxmMsJX7nbewzzTnAeKzdzYe"
       },
       headers: {
         accept: 'application/json',
-        x_cg_demo_api_key:process.env.API_KEY
+        'x-cg-demo-api-key':"CG-MxmMsJX7nbewzzTnAeKzdzYe"
       },
     });
 
