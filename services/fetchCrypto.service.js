@@ -6,6 +6,7 @@ async function fetchCryptoData(coins = ['bitcoin', 'matic-network', 'ethereum'])
   
   try {
     // Make the API request without an API key
+    // console.log("process",process.env.API_KEY)
     const response = await axios.get(url, {
       params: {
         vs_currencies: 'usd',
