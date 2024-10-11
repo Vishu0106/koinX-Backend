@@ -2,18 +2,15 @@ import axios from 'axios';
 
 // Reusable function to fetch cryptocurrency data
 async function fetchCryptoData(coins = ['bitcoin', 'matic-network', 'ethereum']) {
-  const url = 'https://api.coingecko.com/api/v3/simple/price';
+  const url = 'https://api.coingecko.com/api/v3/coins/markets';
   
   try {
     // Make the API request without an API key
     // console.log("process",process.env.API_KEY)
     const response = await axios.get(url, {
       params: {
-        vs_currencies: 'usd',
+        vs_currency: 'usd',
         ids: coins.join(','),
-        include_market_cap: true,
-        include_24hr_change: true,
-        precision: 0,
         x_cg_demo_api_key:process.env.API_KEY
       },
       headers: {

@@ -10,9 +10,9 @@ async function updateCryptoData() {
         }
         return;
     }
-    Object.keys(data).forEach(async (coin) => {
-        const { usd: price, usd_market_cap: marketCap, usd_24h_change: dayChange } = data[coin];
-        const crypto = new Crypto({ coin, price, marketCap, dayChange });
+    data.forEach(async (coinData) => {
+        const { id: coin, market_cap: marketCap, market_cap_change_24h: dayChange ,current_price: price } = coinData;
+        const crypto = new Crypto({ coin, marketCap, dayChange, price });
         await crypto.save();
     });
 }
