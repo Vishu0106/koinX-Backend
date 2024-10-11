@@ -13,9 +13,11 @@ async function fetchCryptoData(coins = ['bitcoin', 'matic-network', 'ethereum'])
         include_market_cap: true,
         include_24hr_change: true,
         precision: 0,
+        x_cg_api_key:process.env.API_KEY
       },
       headers: {
         accept: 'application/json',
+        x_cg_api_key:process.env.API_KEY
       },
     });
 
